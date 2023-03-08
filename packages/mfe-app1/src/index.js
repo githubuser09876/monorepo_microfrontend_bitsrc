@@ -21,7 +21,10 @@ window.unmountApp1 = (containerId) => {
 };
 
 if (!document.getElementById("App1-container")) {
-  // serviceWorker.unregister();
-  // const root = ReactDOM.createRoot(document.getElementById("root"));
-  // root.render(<App />);
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    <div>
+      <h3>Not Meant to Run Individually</h3>
+    </div>
+  );
 }

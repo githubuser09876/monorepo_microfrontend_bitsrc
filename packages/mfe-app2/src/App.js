@@ -21,7 +21,11 @@ const C2 = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img
+          src={`${process.env.REACT_APP_APP2_HOST}${logo}`}
+          className="App-logo"
+          alt="logo"
+        />
         <h1>App 2 Component 2</h1>
       </header>
     </div>
@@ -32,14 +36,14 @@ const Nav = () => {
   return (
     <>
       <div>
-        <NavLink to="/">
+        <NavLink to="/app2/c1">
           <button>
             <h1>C1</h1>
           </button>
         </NavLink>
       </div>
       <div>
-        <NavLink to="/c2">
+        <NavLink to="/app2/c2">
           <button>
             <h1>C2</h1>
           </button>
@@ -54,14 +58,14 @@ const defaultHistory = createBrowserHistory();
 function App({ history = defaultHistory }) {
   return (
     <>
-      <C1 />
-      {/* <BrowserRouter history={history}>
+      {/* <C1 /> */}
+      <BrowserRouter history={history}>
         <Nav />
         <Routes>
           <Route path="/app2/c1" element={<C1 />} />
           <Route path="/app2/c2" element={<C2 />} />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </>
   );
 }

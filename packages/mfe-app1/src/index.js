@@ -21,7 +21,7 @@ window.unmountApp1 = (containerId) => {
 };
 
 if (!document.getElementById("App1-container")) {
-  const root = ReactDOM.createRoot(document.getElementById("root"));
+  const root = createRoot(document.getElementById("root"));
   root.render(
     <div>
       <h3>Not Meant to Run Individually</h3>

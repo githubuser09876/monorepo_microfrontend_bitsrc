@@ -16,7 +16,8 @@ window.renderApp2 = (containerId, history) => {
 };
 
 window.unmountApp2 = (containerId) => {
-  //ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
+  // const root = createRoot(document.getElementById(containerId));
+  // root.unmount();
 };
 
 if (!document.getElementById("App2-container")) {

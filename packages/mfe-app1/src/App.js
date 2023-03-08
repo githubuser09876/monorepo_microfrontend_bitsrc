@@ -36,14 +36,14 @@ const Nav = () => {
   return (
     <>
       <div>
-        <NavLink to="/app1/c1">
+        <NavLink to="/c1">
           <button>
             <h1>C1</h1>
           </button>
         </NavLink>
       </div>
       <div>
-        <NavLink to="/app1/c2">
+        <NavLink to="/c2">
           <button>
             <h1>C2</h1>
           </button>
@@ -62,8 +62,8 @@ function App({ history = defaultHistory }) {
       <BrowserRouter history={history}>
         <Nav />
         <Routes>
-          <Route path="/app1/c1" element={<C1 />} />
-          <Route path="/app1/c2" element={<C2 />} />
+          <Route path="/c1" element={<C1 />} />
+          <Route path="/c2" element={<C2 />} />
         </Routes>
       </BrowserRouter>
     </>

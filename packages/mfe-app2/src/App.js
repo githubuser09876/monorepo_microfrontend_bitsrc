@@ -6,7 +6,11 @@ const C1 = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img
+          src={`${process.env.REACT_APP_APP2_HOST}${logo}`}
+          className="App-logo"
+          alt="logo"
+        />
         <h1>App 2 Component 1</h1>
       </header>
     </div>
@@ -50,13 +54,14 @@ const defaultHistory = createBrowserHistory();
 function App({ history = defaultHistory }) {
   return (
     <>
-      <BrowserRouter history={history}>
+      <C1 />
+      {/* <BrowserRouter history={history}>
         <Nav />
         <Routes>
-          <Route exact path="/" element={<C1 />} />
-          <Route exact path="/c2" element={<C2 />} />
+          <Route path="/app2/c1" element={<C1 />} />
+          <Route path="/app2/c2" element={<C2 />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   );
 }

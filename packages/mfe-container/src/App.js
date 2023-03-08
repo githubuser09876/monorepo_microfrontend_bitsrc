@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import MicroFrontend from "./MicroFrontend";
 
@@ -27,23 +27,41 @@ function App2({ history }) {
   return <MicroFrontend history={history} host={app2Host} name="App2" />;
 }
 
-function Home({ history }) {
+const Nav = () => {
   return (
-    <div className="home">
-      <div className="content">
-        <div className="app1">
-          <App1 />
-        </div>
-        <div className="app2">
-          <App2 />
-        </div>
+    <>
+      <div>
+        <NavLink to="/app1">
+          <button>
+            <h1>A1</h1>
+          </button>
+        </NavLink>
       </div>
-    </div>
+      <div>
+        <NavLink to="/app2">
+          <button>
+            <h1>A2</h1>
+          </button>
+        </NavLink>
+      </div>
+    </>
   );
-}
+};
 
-function App() {
-  return <Home />;
+function App({ history }) {
+  return (
+    <>
+      <BrowserRouter history={history}>
+        <Nav />
+        <div>
+          <Routes>
+            <Route path="/app1" element={<App1 />} />
+            <Route path="/app2" element={<App2 />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;

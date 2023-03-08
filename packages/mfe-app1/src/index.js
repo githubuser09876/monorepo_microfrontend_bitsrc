@@ -2,21 +2,26 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { createRoot } from "react-dom/client";
 // import * as serviceWorker from "./serviceWorker";
 
 window.renderApp1 = (containerId, history) => {
-  ReactDOM.render(
-    <App history={history} />,
-    document.getElementById(containerId)
-  );
+  // ReactDOM.render(
+  //   <App history={history} />,
+  //   document.getElementById(containerId)
+  // );
+  const root = createRoot(document.getElementById(containerId));
+  root.render(<App history={history} />);
   // serviceWorker.unregister();
 };
 
 window.unmountApp1 = (containerId) => {
-  ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
+  console.log("unmount called");
+  //ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
 };
 
 if (!document.getElementById("App1-container")) {
-  ReactDOM.render(<App />, document.getElementById("root"));
   // serviceWorker.unregister();
+  // const root = ReactDOM.createRoot(document.getElementById("root"));
+  // root.render(<App />);
 }

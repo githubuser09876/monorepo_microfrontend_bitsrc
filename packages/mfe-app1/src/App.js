@@ -22,7 +22,7 @@ const C2 = () => {
     <div className="App">
       <header className="App-header">
         <img
-          src={`${process.env.REACT_APP_APP2_HOST}${logo}`}
+          src={`${process.env.REACT_APP_APP1_HOST}${logo}`}
           className="App-logo"
           alt="logo"
         />
